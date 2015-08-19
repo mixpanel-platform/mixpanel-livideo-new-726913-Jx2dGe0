@@ -201,7 +201,7 @@
               sum = sum + dates[date];
             });
             
-            outputTwo[broadcaster] = parseInt(sum.toFixed(2));
+            outputTwo[broadcaster] = sum; //parseInt(sum.toFixed(2));
           });
           
           
@@ -217,8 +217,6 @@
             firstColHeader: 'Cost',
             data: outputTwo
           }); 
-        }).fail(function($xhr) {
-          console.log('error with request', $xhr);
         });
            
           

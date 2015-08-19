@@ -39,8 +39,7 @@
         $("div").remove(".graphs");
         $("h1").remove(".graphs");
         //obtain broadcaster and date range 
-        var broadcasterName  = broadcasterSelect.MPSelect('value'),
-            dateRange = dateSelect.MPDatepicker('value')
+        var dateRange = dateSelect.MPDatepicker('value')
             
         //selected broadcaster
         if (dateRange) {
@@ -191,7 +190,6 @@
           
         };
       };
-      broadcasterSelect.on('change', runQuery);
       dateSelect.on('change', runQuery);
     });
     </script>

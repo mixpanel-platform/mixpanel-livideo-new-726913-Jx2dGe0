@@ -130,11 +130,11 @@
           
           //played broadcast over selected time period
           var params =  $.extend({}, dates, {
-            //'where': '\"' + broadcasterName + '\" in string(properties[\"Broadcaster\"])',
-            'interval': getInterval(dates),
+            'where': '\"' + broadcasterName + '\" in string(properties[\"Broadcaster\"])',
+            //'interval': getInterval(dates),
           });
           
-          MP.api.segment('Played Broadcast', undefined, params).done(function(resultsFour) {
+          MP.api.segment('Played Broadcast', dateRange, params).done(function(resultsFour) {
             $('<h1 style="font-size: 15px; color: rgb(95,105,131)">Broadcast Watch Trend over selected period</h1>' ).css({'padding': '10px'}).appendTo('body');
             
             $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
@@ -172,31 +172,6 @@
         });
           
           
-        
-        //who fans also watch 
-        var endpoint = '/api/2.0/segmentation/multiseg';
-        var params =  $.extend({}, dates, {
-          'interval': getInterval(dates),
-          'inner': 'properties[\"Broadcaster\"]',
-          'outer': 'properties[\"Broadcasters\"]',
-          'event': 'Played Broadcast',
-          'limit': 25
-        });
-          
-        MP.api.query(endpoint, params).done(function(resultsSix) {
-          $('<h1 style="font-size: 15px; color: rgb(95,105,131)">Overlapping fans are also watching</h1>' ).css({'padding': '10px'}).appendTo('body');
-            
-          $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
-            chartType: 'bar',
-            data: resultsSix
-          });
-            
-          $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
-            showPercentages: true,
-            firstColHeader: 'Broadcasters',
-            data: resultsSix
-          }); 
-        });  
           
           
         //average playlength

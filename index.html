@@ -34,6 +34,9 @@
       
       
       var runQuery = function() {
+        //clear out previous content
+        $("div").remove(".graphs");
+        $("h1").remove(".graphs");
         //obtain broadcaster and date range 
         var broadcasterName  = broadcasterSelect.MPSelect('value'),
             dateRange = dateSelect.MPDatepicker('value')
@@ -74,14 +77,14 @@
           });
           
           MP.api.segment('Played Broadcast', 'Age Range', params).done(function(resultsTwo) {
-            $('<h1 style="font-size: 15px; color: rgb(95,105,131)"> Broadcast Watched by Age Group</h1>' ).css({'padding': '10px'}).appendTo('body');
+            $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)"> Broadcast Watched by Age Group</h1>' ).css({'padding': '10px'}).appendTo('body');
             
-            $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
+            $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
                 chartType: 'bar',
                 data: resultsTwo
             });
             
-             $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
+             $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
               showPercentages: true,
               firstColHeader: 'Age Group',
               data: resultsTwo
@@ -98,14 +101,14 @@
           });
           
           MP.api.segment('Played Broadcast', params).done(function(resultsThree) {
-            $('<h1 style="font-size: 15px; color: rgb(95,105,131)"> Broadcast Watch Trend over last 96 hours</h1>' ).css({'padding': '10px'}).appendTo('body');
+            $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)"> Broadcast Watch Trend over last 96 hours</h1>' ).css({'padding': '10px'}).appendTo('body');
             
-            $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
+            $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
                 chartType: 'line',
                 data: resultsThree
             });
             
-             $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
+             $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
               showPercentages: true,
               firstColHeader: 'Event',
               data: resultsThree
@@ -120,14 +123,14 @@
           });
           
           MP.api.segment('Played Broadcast', dateRange, params).done(function(resultsFour) {
-            $('<h1 style="font-size: 15px; color: rgb(95,105,131)">Broadcast Watch Trend over selected period</h1>' ).css({'padding': '10px'}).appendTo('body');
+            $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">Broadcast Watch Trend over selected period</h1>' ).css({'padding': '10px'}).appendTo('body');
             
-            $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
+            $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
                 chartType: 'line',
                 data: resultsFour
             });
             
-             $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
+             $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
               showPercentages: true,
               firstColHeader: 'Event',
               data: resultsFour
@@ -142,14 +145,14 @@
         });
           
         MP.api.segment('Played Broadcast', 'Keyword', params).done(function(resultsFive) {
-          $('<h1 style="font-size: 15px; color: rgb(95,105,131)">Popular Broadcast Keyword over selected period</h1>' ).css({'padding': '10px'}).appendTo('body');
+          $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">Popular Broadcast Keyword over selected period</h1>' ).css({'padding': '10px'}).appendTo('body');
             
-          $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
+          $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
             chartType: 'bar',
             data: resultsFive
           });
             
-          $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
+          $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
             showPercentages: true,
             firstColHeader: 'Category',
             data: resultsFive
@@ -171,14 +174,14 @@
           var result = resultsSeven.values();
           output["Played Broadcast"] = result;
           
-          $('<h1 style="font-size: 15px; color: rgb(95,105,131)">Average time watching stream</h1>' ).css({'padding': '10px'}).appendTo('body');
+          $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">Average time watching stream</h1>' ).css({'padding': '10px'}).appendTo('body');
             
-          $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
+          $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
             chartType: 'line',
             data: output
           });
             
-          $('<div></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
+          $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
             showPercentages: true,
             firstColHeader: 'Average Time',
             data: output

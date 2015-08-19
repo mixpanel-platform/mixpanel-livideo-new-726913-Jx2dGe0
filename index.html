@@ -195,13 +195,15 @@
 
           _.each(_.keys(query), function(broadcaster){
             var dates = query[broadcaster]
+            var sum = 0
 
             _.each(_.keys(dates), function(date){
               if (!output[broadcaster]) {
                 outputTwo[broadcaster] = {}
-                var sum = 0
+                sum = 0
               }
               sum = sum + dates[date];
+              console.log(dates[date])
               outputTwo[broadcaster] = sum;
             });
           });

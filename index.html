@@ -198,14 +198,10 @@
             var sum = 0
 
             _.each(_.keys(dates), function(date){
-              if (!output[broadcaster]) {
-                outputTwo[broadcaster] = {}
-                sum = 0
-              }
               sum = sum + dates[date];
-              console.log(dates[date])
-              outputTwo[broadcaster] = sum;
             });
+            
+            outputTwo[broadcaster] = sum;
           });
           
           

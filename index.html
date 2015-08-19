@@ -12,28 +12,13 @@
         <h1 style="font-size: 18px; color: rgb(95,105,131)">Broadcaster Report</h1><br/>
       </div>
       
-      <div id="mpselect" style="float: left;"></div>
-      <div id="dateSelect" style="float: right;"></div><br/><br/><br>
+      <div id="dateSelect" style="float: left;"></div><br/><br/><br>
       <div style="clear: both;"></div>
     </div>
     
     <script>
     MP.api.ready(function () {
       //setting up dropdowns
-      var options = {
-          items: [
-            {label: 'Select Broadcaster', value: ''},
-            {label: 'Jay-Z', value: 'Jay-Z'},
-            {label: 'Miley Cyrus', value: 'Miley Cyrus'},
-            {label: 'Beyonce', value: 'Beyonce'},
-            {label: 'J-Lo', value: 'J-Lo'},
-            {label: 'Kylie Jenner', value: 'Kylie Jenner'},
-            {label: 'Lebron James', value: 'Lebron James'},
-            {label: 'Danica Patrick', value: 'Danica Patrick'},
-            {label: 'Lil Wayne', value: 'Lil Wayne'},
-            ]
-        };
-      var broadcasterSelect  = $('#mpselect').MPSelect(options);
       var dateSelect  = $('#dateSelect').MPDatepicker();
       
       //convenience method for grabbing that datepicker value

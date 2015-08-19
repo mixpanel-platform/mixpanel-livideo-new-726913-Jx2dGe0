@@ -187,10 +187,10 @@
           'inner': 'number(properties["Cost"])',
           'outer': 'properties["Broadcaster"]',
           'action': 'sum',
-          //'interval': getInterval(dates)
+          'interval': getInterval(dates)
         });
           
-        MP.api.segment('Completed Subscription', dateRange, params).done(function(resultsEight) {
+        MP.api.query(endpoint, params).done(function(resultsEight) {
           var result = resultsEight.values();
           outputTwo["Played Broadcast"] = result;
           

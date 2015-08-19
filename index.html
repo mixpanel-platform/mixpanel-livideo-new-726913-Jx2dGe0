@@ -177,6 +177,35 @@
             firstColHeader: 'Average Time',
             data: output
           }); 
+        });
+        
+         //////////////Total $ of Completed Subscriptions over time//////////////
+        var outputTwo = {};
+        var endpoint = '/api/2.0/segmentation/multiseg';
+        var params =  $.extend({}, dates, {
+          'action': 'sum',
+          'inner': 'number(properties["Cost"])',
+          'outer': 'properties["Broadcaster"]',
+          'event': Completed Subscription,
+          'interval': getInterval(dates)
+        });
+          
+        MP.api.segment('Completed Subscription', params).done(function(resultsEight) {
+          var result = resultsEight.values();
+          outputTwo["Played Broadcast"] = result;
+          
+          $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">'  + broadcasterName + ': Total $ of New Subscriptions over time</h1>' ).css({'padding': '10px'}).appendTo('body');
+            
+          $('<div class = "graphs"></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
+            chartType: 'bar',
+            data: resultsEight
+          });
+            
+          $('<div class = "graphs"></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
+            showPercentages: true,
+            firstColHeader: 'Cost',
+            data: resultsEight
+          }); 
         });    
           
         };

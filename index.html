@@ -202,23 +202,10 @@
                 var sum = 0
               }
               sum = sum + dates[date];
-              debugger;
-            
+              outputTwo[broadcaster] = sum;
             });
-
-                  var propertyTwo = property[propertiesTwo]
-                  var sum = 0;
-                
-                  _.each(_.keys(propertyTwo), function(dates){
-                    sum = sum + propertyTwo[dates]
-                  });
-                  
-                  output[propertiesTwo][properties] = sum;
-                  
-            debugger;
           });
           
-
           
           $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">Total $ of New Subscriptions over time</h1>' ).css({'padding': '10px'}).appendTo('body');
             

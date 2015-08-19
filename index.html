@@ -193,24 +193,23 @@
         MP.api.query(endpoint, params).done(function(resultsEight) {
           var query = resultsEight["data"]["values"];
 
-          _.each(_.keys(query), function(dates){
-            debugger;
-                var date = query[dates]
+          _.each(_.keys(query), function(broadcaster){
+            var dates = query[broadcaster]
+            outputTwo[broadcaster] = dates[0];
           });
-          //outputTwo["Played Broadcast"] = result;
           
           
           $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">Total $ of New Subscriptions over time</h1>' ).css({'padding': '10px'}).appendTo('body');
             
           $('<div class = "graphs"></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
             chartType: 'bar',
-            data: resultsEight
+            data: OutputTwo
           });
             
           $('<div class = "graphs"></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
             showPercentages: true,
             firstColHeader: 'Cost',
-            data: resultsEight
+            data: OutputTwo
           }); 
         }).fail(function($xhr) {
           console.log('error with request', $xhr);

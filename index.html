@@ -195,7 +195,23 @@
 
           _.each(_.keys(query), function(broadcaster){
             var dates = query[broadcaster]
-            outputTwo[broadcaster] = dates[0];
+
+            _.each(_.keys(dates), function(date){
+              if (!output[broadcaster]) {
+                outputTwo[broadcaster] = {}
+              }
+              
+              debugger;
+                  
+                  var propertyTwo = property[propertiesTwo]
+                  var sum = 0;
+                
+                  _.each(_.keys(propertyTwo), function(dates){
+                    sum = sum + propertyTwo[dates]
+                  });
+                  
+                  output[propertiesTwo][properties] = sum;
+                  
             debugger;
           });
           

@@ -203,13 +203,13 @@
             
           $('<div class = "graphs"></div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
             chartType: 'bar',
-            data: OutputTwo
+            data: outputTwo
           });
             
           $('<div class = "graphs"></div>').css({'width':'100%', 'float':'left', 'padding': '15px'}).appendTo('body').MPTable({
             showPercentages: true,
             firstColHeader: 'Cost',
-            data: OutputTwo
+            data: outputTwo
           }); 
         }).fail(function($xhr) {
           console.log('error with request', $xhr);

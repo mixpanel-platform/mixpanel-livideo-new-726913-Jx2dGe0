@@ -192,10 +192,9 @@
           
         MP.api.query(endpoint, params).done(function(resultsEight) {
           var query = resultsEight["data"]["values"];
-          console.log(query);
-          debugger;
-          
+
           _.each(_.keys(query), function(dates){
+            debugger;
                 var date = query[dates]
           });
           //outputTwo["Played Broadcast"] = result;

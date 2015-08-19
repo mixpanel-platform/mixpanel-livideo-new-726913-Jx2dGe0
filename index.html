@@ -183,10 +183,10 @@
         var outputTwo = {};
         var endpoint = '/api/2.0/segmentation/multiseg';
         var params =  $.extend({}, dates, {
-          'action': 'sum',
+          'event': 'Completed Subscription',
           'inner': 'number(properties["Cost"])',
           'outer': 'properties["Broadcaster"]',
-          'event': 'Completed Subscription',
+          'action': 'sum',
           'interval': getInterval(dates)
         });
           

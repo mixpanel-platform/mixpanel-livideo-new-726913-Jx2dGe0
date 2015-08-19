@@ -46,7 +46,7 @@
           var dates = getDates();
           
           
-          //played broadcast by top locations
+          //////////////played broadcast by top locations//////////////
           var params =  $.extend({}, dates, {
             'where': 'defined (properties[\"$city\"])',
             'limit': 10,
@@ -69,7 +69,7 @@
           });
           
           
-          //subscriptions by age range
+          //////////////subscriptions by age range//////////////
           var params =  $.extend({}, dates, {
             'limit': 10,
             'interval': getInterval(dates)
@@ -91,7 +91,7 @@
           });
           
           
-          //played broadcast over last 96 hours
+          //////////////played broadcast over last 96 hours//////////////
           var params =  $.extend({}, dates, {
             'unit': 'hour',
             'from': moment().subtract(8, 'days'),
@@ -114,7 +114,7 @@
           });
           
           
-          //played broadcast over selected time period
+          //////////////played broadcast over selected time period//////////////
           MP.api.segment('Played Broadcast', dateRange).done(function(resultsFour) {
             $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">Broadcast Watch Trend over selected period</h1>' ).css({'padding': '10px'}).appendTo('body');
             
@@ -131,7 +131,7 @@
           });
         
         
-        //video category 
+        //////////////video category//////////////
         var params =  $.extend({}, dates, {
           'interval': getInterval(dates)
         });
@@ -154,7 +154,7 @@
           
           
           
-        //average playlength
+        //////////////average playlength//////////////
         var output = {};
         var params =  $.extend({}, dates, {
           'interval': getInterval(dates),

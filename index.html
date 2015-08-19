@@ -206,7 +206,10 @@
             firstColHeader: 'Cost',
             data: resultsEight
           }); 
-        });    
+        }).fail(function($xhr) {
+          console.log('error with request', $xhr);
+        });
+           
           
         };
       };

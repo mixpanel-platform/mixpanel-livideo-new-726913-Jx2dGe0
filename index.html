@@ -71,7 +71,6 @@
           
           //subscriptions by age range
           var params =  $.extend({}, dates, {
-            //'where': '\"' + broadcasterName + '\" in string(properties[\"Broadcaster\"])',
             'limit': 10,
             'interval': getInterval(dates)
           });
@@ -94,7 +93,6 @@
           
           //played broadcast over last 96 hours
           var params =  $.extend({}, dates, {
-            //'where': '\"' + broadcasterName + '\" in string(properties[\"Broadcaster\"])',
             'unit': 'hour',
             'from': moment().subtract(8, 'days'),
             'to': moment()
@@ -117,12 +115,7 @@
           
           
           //played broadcast over selected time period
-          var params =  $.extend({}, dates, {
-            'where': '\"' + broadcasterName + '\" in string(properties[\"Broadcaster\"])',
-            //'interval': getInterval(dates),
-          });
-          
-          MP.api.segment('Played Broadcast', dateRange, params).done(function(resultsFour) {
+          MP.api.segment('Played Broadcast', dateRange).done(function(resultsFour) {
             $('<h1 class = "graphs" style="font-size: 15px; color: rgb(95,105,131)">Broadcast Watch Trend over selected period</h1>' ).css({'padding': '10px'}).appendTo('body');
             
             $('<div class = "graphs"> </div>').css({'width':'100%', 'float':'left', 'padding': '10px'}).appendTo('body').MPChart({
@@ -140,7 +133,6 @@
         
         //video category 
         var params =  $.extend({}, dates, {
-          //'where': '\"' + broadcasterName + '\" in string(properties[\"Broadcaster\"])',
           'interval': getInterval(dates)
         });
           
@@ -165,7 +157,6 @@
         //average playlength
         var output = {};
         var params =  $.extend({}, dates, {
-          //'where': '\"' + broadcasterName + '\" in string(properties[\"Broadcaster\"])',
           'interval': getInterval(dates),
           'method': 'average'
         });

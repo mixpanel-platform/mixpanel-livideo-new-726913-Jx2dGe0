@@ -179,7 +179,8 @@
           'interval': getInterval(dates),
           'inner': 'properties[\"Broadcaster\"]',
           'outer': 'properties[\"Broadcasters\"]',
-          'event': 'Played Broadcast'
+          'event': 'Played Broadcast',
+          'limit': 25
         });
           
         MP.api.query(endpoint, params).done(function(resultsSix) {
